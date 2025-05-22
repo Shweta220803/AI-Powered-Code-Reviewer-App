@@ -25,9 +25,12 @@ const App = () => {
     Prism.highlight(code, Prism.languages.javascript, "javascript");
 
   const handleCodeReview = async () => {
-    const response = await axios.post("http://localhost:3000/ai/get-review", {
-      code,
-    });
+    const response = await axios.post(
+      "https://ai-powered-code-reviewer-app.onrender.com/ai/get-review",
+      {
+        code,
+      }
+    );
     setReview(response.data.response);
   };
 
